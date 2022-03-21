@@ -51,7 +51,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 
   ],
-  providers: [//srvisler
+  providers: [//srvislereee
     ClientService
   ],
   bootstrap: [AppComponent]
