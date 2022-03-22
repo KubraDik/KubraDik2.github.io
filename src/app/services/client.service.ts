@@ -23,9 +23,9 @@ export class ClientService {
      ref=> ref.orderBy('lastName','asc'));
    }
 
-   //getClients():Observable<Client[]>{
+  getClients():Observable<Client[]>{
      //Get clients with the id
-     /*this.clients=this.clientsCollection.snapshotChanges().pipe(
+     this.clients=this.clientsCollection.snapshotChanges().pipe(
      map(changes =>{
        return changes.map(action=>{
          const data=action.payload.doc.data() as Client;
@@ -59,7 +59,19 @@ export class ClientService {
         return data;
       }
     }));
-    return this.client;*/
+    return this.client;
 
-  // }
-}
+   }
+
+      updateClient(client:Client){
+ 
+        this.clientDoc=this.afs.doc(`clients/${client.id}`);
+        this.clientDoc.update(client);
+      } 
+
+      /*deleteClient(client: Client) {
+        this.clientDoc = this.afs.doc(`clients/${client.id}`);
+        this.clientDoc.delete();
+      }*/
+
+  }

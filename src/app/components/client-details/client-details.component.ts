@@ -3,6 +3,7 @@ import { ClientService } from 'src/app/services/client.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FlashMessagesService } from 'flash-messages-angular';
 import { Client } from 'src/app/modules/Client';
+import { FlashMessagesModule } from 'flash-messages-angular';
 
 @Component({
   selector: 'app-client-details',
@@ -41,8 +42,25 @@ export class ClientDetailsComponent implements OnInit {
     
     }
   );
-   
 
   }
+  updateBalance(id :string){
+
+   this.clientService.updateClient(this.client);
+   this.flashMessage.show('Balance Updated',{//güncellenmiş mesajı isteriz
+     cssClass:'alert-success',timeout:4000
+   });
+
+  }
+
+ /* onDeleteClick() { 
+    if(confirm('Are you sure?')) {
+      this.clientService.deleteClient(this.client);
+      this.flashMessage.show('Client removed', {
+        cssClass: 'alert-success', timeout: 4000
+      });
+      this.router.navigate(['/']);
+    }
+  }*/
 
 }
