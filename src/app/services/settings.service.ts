@@ -1,0 +1,23 @@
+import { Injectable } from '@angular/core';
+import { Settings } from '../modules/settings';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SettingsService {
+  
+  settings:Settings={
+
+    allowRegistration:true,//kayda izin verme
+    disableBalanceOnAdd:false,
+    disableBalanceOnEdit:true
+
+  }
+
+  constructor() { }
+
+  getSettings():Settings{
+   return this.settings;
+  }
+}

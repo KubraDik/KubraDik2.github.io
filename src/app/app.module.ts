@@ -3,11 +3,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';//ngform için gerekli
 import { FlashMessagesModule } from 'flash-messages-angular';
 
+
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+
+import { SettingsService } from './services/settings.service';
 import { AuthService } from './services/auth.service';
 import { ClientService } from './services/client.service';
 import { AppComponent } from './app.component';
@@ -24,6 +27,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES } from '@angular/router';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,8 @@ import { RouterModule, ROUTES } from '@angular/router';
   ],
   providers: [
     ClientService,
-    AuthService
+    AuthService,
+    SettingsService
   ],
   bootstrap: [AppComponent]
 })
