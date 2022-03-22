@@ -20,7 +20,7 @@ export class EditClientComponent implements OnInit {
     phone:'',
     balance:0
   }
-  disableBalanceOnEdit:boolean=true;
+  disableBalanceOnEdit:boolean=false;
 
   constructor(
     private clientService:ClientService,
@@ -51,7 +51,20 @@ export class EditClientComponent implements OnInit {
 
 
    onSubmit({value,valid}:{value:Client ,valid:boolean}){
-     
+    if(!valid){
+      this.flashMessage.show('Please fill out the form correctly',{
+        cssClass:'alert-danger',timeout:4000});
+    }else{
+      //Add id to client:biz client gönderiyoruz ama aslında id göndermemiz gerekir ki güncelleme yapabilelim(urlden elir)
+      value.id=this.id;
+      //Update client
+      this.clientService.updateClient(value);
+      this.flashMessage.show('Client updated',{
+        cssClass:'alert-success',timeout:4000});
+
+    }
+    this.router.navigate(['/client/'+this.id]);
+
    }
 
    /*  onSubmit({value,valid}:{value:Client, valid:boolean}){
