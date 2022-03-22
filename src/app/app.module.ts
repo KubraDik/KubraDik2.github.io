@@ -8,7 +8,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-
+import { AuthService } from './services/auth.service';
 import { ClientService } from './services/client.service';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -39,6 +39,7 @@ import { RouterModule, ROUTES } from '@angular/router';
     RegisterComponent,
     SettingsComponent,
     NotFoundComponent,
+  
 
   ],
   imports: [
@@ -50,11 +51,13 @@ import { RouterModule, ROUTES } from '@angular/router';
     FormsModule,
     FlashMessagesModule.forRoot(),
     
+    
 
 
   ],
-  providers: [//srvislereee
-    ClientService
+  providers: [
+    ClientService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
