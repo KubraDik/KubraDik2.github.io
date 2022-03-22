@@ -5,7 +5,6 @@ import { FlashMessagesService } from 'flash-messages-angular';
 import { Client } from 'src/app/modules/Client';
 import { FlashMessagesModule } from 'flash-messages-angular';
 
-
 @Component({
   selector: 'app-edit-client',
   templateUrl: './edit-client.component.html',
@@ -21,7 +20,7 @@ export class EditClientComponent implements OnInit {
     phone:'',
     balance:0
   }
-  disableBalanceOnEdit:boolean=true
+  disableBalanceOnEdit:boolean=true;
 
   constructor(
     private clientService:ClientService,
@@ -30,7 +29,7 @@ export class EditClientComponent implements OnInit {
     private flashMessage:FlashMessagesService
   ) { }
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
     //Get id from url
     this.id=this.route.snapshot.params['id'];
      //Get client
@@ -40,11 +39,23 @@ export class EditClientComponent implements OnInit {
       // console.log(this.client);
       );
  
+   }*/
+
+   ngOnInit() {
+    //Get id from url
+    this.id=this.route.snapshot.params['id'];
+     //Get client
+     this.clientService.getClient(this.id).subscribe(client => this.client = client);
+ 
    }
 
 
-   onSubmit({value,valid}:{value:Client, valid:boolean}){
-     if(!valid){
+   onSubmit({value,valid}:{value:Client ,valid:boolean}){
+     
+   }
+
+   /*  onSubmit({value,valid}:{value:Client, valid:boolean}){
+   if(!valid){
        this.flashMessage.show('Please fill out the form correctly',{
          cssClass:'alert-danger',timeout:4000
        });
@@ -60,6 +71,6 @@ export class EditClientComponent implements OnInit {
      this.router.navigate(['/client/'+this.id]);
      }
 
-   }
+   }*/
 
 }
