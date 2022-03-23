@@ -9,7 +9,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
-
 import { SettingsService } from './services/settings.service';
 import { AuthService } from './services/auth.service';
 import { ClientService } from './services/client.service';
@@ -54,6 +53,7 @@ import { from } from 'rxjs';
     AngularFireAuthModule,
     FormsModule,
     FlashMessagesModule.forRoot(),
+  
     
     
 

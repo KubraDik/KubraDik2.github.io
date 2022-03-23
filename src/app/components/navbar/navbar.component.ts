@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   private authService:AuthService,
   private router:Router,
   private flashMessage:FlashMessagesService,
-  private settingsservice:SettingsService
+  private settingsService:SettingsService
 
   ) { }
 
@@ -32,6 +32,10 @@ export class NavbarComponent implements OnInit {
         this.isLoggedIn=false;
       }
     });
+
+
+    this.showRegister=this.settingsService.getSettings().allowRegistration;
+
   }
 
   onLogoutClick(){
