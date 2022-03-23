@@ -9,6 +9,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+//import 'firebase/auth';
+//import 'firebase/firestore';
+
+
+
 import { SettingsService } from './services/settings.service';
 import { AuthService } from './services/auth.service';
 import { ClientService } from './services/client.service';
@@ -27,6 +32,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, ROUTES } from '@angular/router';
 import { from } from 'rxjs';
+
+
 
 @NgModule({
   declarations: [

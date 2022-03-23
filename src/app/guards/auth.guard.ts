@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivate,Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/auth";//yetkiyi devre dışı  bırakacağımız için import ettik
 import { Observable } from "rxjs";//BURASI HATA VEREBİLİR ÇALIŞMAZSA DEFAULT ŞEKİLDE DE BAK
-import { auth } from "firebase";
 import { map } from "rxjs/operators";
 
 @Injectable()

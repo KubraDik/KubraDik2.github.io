@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { FlashMessagesService } from 'flash-messages-angular';
 import { Client } from 'src/app/modules/Client';
 import { SettingsService } from 'src/app/services/settings.service';
+//import { auth } from 'firebase/app';
+//import firebase from 'firebase/app';
+
+
 
 @Component({
   selector: 'app-navbar',
