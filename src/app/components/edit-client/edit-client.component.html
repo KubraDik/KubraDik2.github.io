@@ -73,7 +73,7 @@
               #clientEmail="ngModel"
               [ngClass]="{'is-invalid' : clientEmail.errors && clientEmail.touched}" 
               [(ngModel)]="client.email"
-              pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+              pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
               required
               
               >

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FlashMessagesService } from 'flash-messages-angular';
 import { Router } from '@angular/router';
+import { User } from 'src/app/modules/User';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,14 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
 
-  
-   email:string;
-   password:string;
+ 
+ // email:string;
+  //password:string;
+   user:User={
+
+    email:'hello',
+   password:'',
+  }
    
 
 
@@ -24,6 +30,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.user.email)
     this.authService.getAuth().subscribe(auth=>{
       if(auth){
         this.router.navigate(['/']);
@@ -33,9 +40,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.email)
-    console.log(this.password)
-    this.authService.login(this.email,this.password)
+    console.log(this.user.email)
+    console.log(this.user.password)
+   // this.authService.login(this.email,this.password)
+   this.authService.login(this.user.email,this.user.password)
+
     .then(res =>{
       this.flashMessage.show('You are now logged in',{
         cssClass:'alert-success',timeout:4000

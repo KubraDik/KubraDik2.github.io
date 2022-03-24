@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { User } from '../modules/User'; 
 
 
 //import { auth } from 'firebase/app';
@@ -18,6 +19,9 @@ export class AuthService {
   constructor(private afAuth:AngularFireAuth) { }
 
   login(email:string,password:string){
+
+    //email.toString().trim();
+    console.log(email);
     return new Promise((resolve,reject)=>{
 
       this.afAuth.signInWithEmailAndPassword(email,password)
