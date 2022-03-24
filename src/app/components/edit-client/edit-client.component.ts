@@ -46,12 +46,15 @@ export class EditClientComponent implements OnInit {
    }*/
 
    ngOnInit() {
+
+    this.disableBalanceOnEdit=this.settingsService.getSettings().disableBalanceOnEdit;
+    
     //Get id from url
     this.id=this.route.snapshot.params['id'];
      //Get client
      this.clientService.getClient(this.id).subscribe(client => this.client = client);
 
-     this.disableBalanceOnEdit=this.settingsService.getSettings().disableBalanceOnEdit;
+    
 
  
    }
@@ -68,9 +71,12 @@ export class EditClientComponent implements OnInit {
       this.clientService.updateClient(value);
       this.flashMessage.show('Client updated',{
         cssClass:'alert-success',timeout:4000});
+        this.router.navigate(['/client/'+this.id]);
+
 
     }
-    this.router.navigate(['/client/'+this.id]);
+    //        this.router.navigate(['/client/'+this.id]);
+
 
    }
 

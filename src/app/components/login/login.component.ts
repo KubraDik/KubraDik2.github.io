@@ -9,8 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string;
-  password:string;
+
+
+  
+   email:string;
+   password:string;
+   
+
 
   constructor(
     private authService:AuthService,
@@ -28,6 +33,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
+    console.log(this.email)
+    console.log(this.password)
     this.authService.login(this.email,this.password)
     .then(res =>{
       this.flashMessage.show('You are now logged in',{

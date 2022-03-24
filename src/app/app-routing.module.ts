@@ -17,17 +17,17 @@ import { RegisterGuard } from './guards/register.guard';
 
 const routes:Routes=[
 
-  {path:'' ,component:DashboardComponent},
+  /*{path:'' ,component:DashboardComponent},
   {path:'login' ,component:LoginComponent},
   {path:'register' ,component:RegisterComponent},
   {path:'client/add' ,component:AddClientComponent},
   {path:'client/edit/:id' ,component:EditClientComponent},
   {path:'client/:id' ,component:ClientDetailsComponent},
   {path:'settings' ,component:SettingsComponent},
-  {path:'**' ,component:NotFoundComponent},
+  {path:'**' ,component:NotFoundComponent},*/
 
-  /*
-  AUTHGUARDI EKLE SONRASINDA VE FİREBASEİ ADMİN GİRİŞİNİ DÜZENLE
+  
+ // AUTHGUARDI EKLE SONRASINDA VE FİREBASEİ ADMİN GİRİŞİNİ DÜZENLE
   {path:'' ,component:DashboardComponent , canActivate:[AuthGuard]},
   {path:'login' ,component:LoginComponent},
   {path:'register' ,component:RegisterComponent,canActivate:[RegisterGuard]},
@@ -36,7 +36,7 @@ const routes:Routes=[
   {path:'client/:id' ,component:ClientDetailsComponent, canActivate:[AuthGuard]},
   {path:'settings' ,component:SettingsComponent, canActivate:[AuthGuard]},
   {path:'**' ,component:NotFoundComponent},
-  */
+  
 
 
 

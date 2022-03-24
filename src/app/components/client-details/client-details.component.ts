@@ -44,6 +44,8 @@ export class ClientDetailsComponent implements OnInit {
   );
 
   }
+
+  //updateBalance(id :string)
   updateBalance(id :string){
 
    this.clientService.updateClient(this.client);
